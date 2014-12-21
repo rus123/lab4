@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+.buttonbox{height: 40px;
+         background-color:red;
+		 width:200px;
+		 color:blue;
+		 font-size:32px;
+		 text-align:center}
+#pole{height: 200px;
+     width:340px;
+	 background-color:yellow;
+	 position:relative}
+
+TD.className="td_select";
+    #Table.td_select{
+    background-color:green;
+    color:red;
+    font-weight:bold}
+</style>
+</head>
+</body>  
+</html>
+   <div id='pole'>
+19.Таблица со случайными числами; выделить все ячейки с элементами, у которых сумма цифр равна 6.
+   </div>
+<script>
+
+function getrandom(min,max){var m=min+Math.round( (max-min)*Math.random());
+return m;}
+
+var rows=8; var columns=8
+var sssr="";
+sssr=sssr+'<table id="Table">\n';
+for (var i=0; i<rows; i++) {
+ sssr=sssr+'<tr>\n';
+ for (var j=0; j<columns; j++) {
+ sssr=sssr+'<td>'+Math.floor(Math.random()*(99))+'</td>';
+ }
+ sssr=sssr+'</tr>\n';
+ }
+  sssr=sssr+'</table>';
+sssr=sssr+'<input type="button" value="Поиск" onclick="search()">';
+document.getElementById("pole").innerHTML=sssr;
+
+ function search() {
+     var table=document.getElementById("Table");
+for (var i=0; i<table.rows.length; i++) {
+for (var j=0; j<table.rows[0].cells.length; j++) {
+     var TD=table.rows[i].cells[j];
+	 
+	if (parseInt(TD.innerHTML.charAt(0))+parseInt(TD.innerHTML.charAt(1))==6)
+{
+TD.style.backgroundColor="red";}}}}
+
+
+</script>
+     
+
+
+
